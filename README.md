@@ -7,8 +7,8 @@ This repo contains study notes, practice exercises, and resources for mastering 
 ---
 
 ### 🔑 Authentication and Identity Management  
-- 🔐 Configure authentication providers  
-- 👥 Manage identity providers and RBAC  
+- 🔐 Configure multiple authentication providers and RBAC
+- 🔐 Client Certificate Authentication with kubeconfig in Kubernetes/OpenShift 
 
 ---
 
