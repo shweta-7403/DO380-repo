@@ -40,7 +40,7 @@ This repository demonstrates an **end-to-end GitOps workflow** implemented on **
 ---
 
 ## 📸 Screenshots
-(Add your OpenShift & ArgoCD screenshots here for better presentation)
+![Screenshot](images/Screenshot%20from%202025-08-23%2013-45-57.png)
 
 ---
 
