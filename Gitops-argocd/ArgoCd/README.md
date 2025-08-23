@@ -5,21 +5,25 @@ This repository demonstrates an **end-to-end GitOps workflow** implemented on **
 ---
 
 ## 🚀 Project Overview
-- Installed and configured the **OpenShift GitOps (ArgoCD) Operator**
-- Enabled **TLS encryption** and integrated `cluster-root-ca-bundle` ConfigMap  
-- Applied **RBAC policies** (added `opcadmin` with `cluster-admin`)  
-- Configured ArgoCD to mount ConfigMap as a **trusted volume**  
-- Integrated with **GitLab repository** for GitOps workflow  
-- Automated deployment of manifests (`operator.yaml`, `console.yaml`) to OpenShift cluster  
-- Enforced **policy compliance** using the Compliance Operator  
+1. **Installed ArgoCD Operator** (`openshift-gitops` namespace).  
+2. **Edited ArgoCD CR** (`oc edit argocd openshift-gitops -n openshift-gitops`) to:
+   - Add TLS settings  
+   - Mount `cluster-root-ca-bundle` ConfigMap as a trusted volume  
+   - Apply RBAC for `opcadmin` role with cluster-admin permissions  
+3. **Created ConfigMap** for trusted CA certificates.  
+4. **Integrated GitLab repo** with ArgoCD Application for continuous deployment.  
+5. Modified and pushed changes (`operator.yaml`, `console.yaml`) to GitLab repo.  
+6. Validated security & compliance with **Compliance Operator**.  
+
 
 ---
 
 ## 📂 Repository Contents
-- `manifests/operator.yaml` → GitOps operator setup  
-- `manifests/console.yaml` → OpenShift console customization  
-- `config/cluster-root-ca-bundle.yaml` → ConfigMap with trusted root certificates  
-- `policies/rbac-policy.yaml` → Role/RoleBinding for secure access control  
+- `argocd-rbac.yaml` → RBAC roles & bindings  
+- `cluster-root-ca-bundle-configmap.yaml` → Trusted CA bundle  
+- `argocd-edit.yaml` → Snippet to add ConfigMap volume in ArgoCD CR  
+- `application.yaml` → Example ArgoCD Application pointing to GitLab repo  
+- `operator.yaml` & `console.yaml` → Modified deployment manifests  
 
 ---
 
