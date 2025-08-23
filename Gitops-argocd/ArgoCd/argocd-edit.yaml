@@ -1,0 +1,11 @@
+## Edit ArgoCD CR (Mount ConfigMap Volume)
+spec:
+  repo:
+    volumes:
+      - name: ca-bundle
+        configMap:
+          name: cluster-root-ca-bundle
+    volumeMounts:
+      - name: ca-bundle
+        mountPath: /etc/ssl/certs/ca-bundle.crt
+        subPath: ca-bundle.crt
