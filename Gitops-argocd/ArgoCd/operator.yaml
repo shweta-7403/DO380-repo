@@ -1,0 +1,20 @@
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: compliance-operator-group
+  namespace: openshift-compliance
+spec:
+  targetNamespaces:
+    - openshift-compliance
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: compliance-operator
+  namespace: openshift-compliance
+spec:
+  channel: stable
+  name: compliance-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
