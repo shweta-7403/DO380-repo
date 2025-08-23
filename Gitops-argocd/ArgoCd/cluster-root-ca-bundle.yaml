@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-root-ca-bundle
+  namespace: openshift-gitops
+data:
+  ca.crt: |
+    -----BEGIN CERTIFICATE-----
+    YOUR-ROOT-CA-CERT-HERE
+    -----END CERTIFICATE-----
